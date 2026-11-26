@@ -1,0 +1,54 @@
+<main class="container">
+  <h2>Expandable Multi-Select Table</h2>
+  <p class="hint">
+    Click any row to toggle highlight. Click the arrow on parent rows to expand
+    or collapse children.
+  </p>
+
+  <div class="selection-summary">
+    Selected IDs: @if (selectedIds().size === 0) {
+    <span>None</span>
+    } @else {
+    <span>{{ selectedIdsText() }}</span>
+    }
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Text 1</th>
+        <th>Text 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of visibleRows(); track item.row.id) {
+      <tr
+        [class.selected]="isSelected(item.row.id)"
+        [class.child-row]="item.depth > 0"
+        (click)="toggleSelect(item.row.id)"
+      >
+        <td>
+          <div class="id-cell" [style.padding-left.px]="item.depth * 24">
+            @if (item.hasChildren) {
+            <button
+              type="button"
+              class="expand-btn"
+              [attr.aria-label]="isExpanded(item.row.id) ? 'Collapse row ' + item.row.id : 'Expand row ' + item.row.id"
+              (click)="toggleExpand(item.row.id, $event)"
+            >
+              {{ isExpanded(item.row.id) ? '▾' : '▸' }}
+            </button>
+            } @else {
+            <span class="expand-spacer"></span>
+            }
+            <span>{{ item.row.id }}</span>
+          </div>
+        </td>
+        <td>{{ item.row.text1 }}</td>
+        <td>{{ item.row.text2 }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</main>

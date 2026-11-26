@@ -1,0 +1,77 @@
+.container {
+  max-width: 780px;
+  margin: 2rem auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hint {
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.selection-summary {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d0d7de;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+.data-table tbody tr {
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+.data-table tbody tr.selected,
+.data-table tbody tr.selected:hover {
+  background-color: #dbeafe;
+}
+
+.id-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.expand-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.expand-btn:hover {
+  background: #e2e8f0;
+}
+
+.expand-spacer {
+  display: inline-block;
+  width: 1.5rem;
+}
