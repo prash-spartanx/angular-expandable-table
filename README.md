@@ -37,8 +37,7 @@ If not installed, download and install Node.js LTS from [nodejs.org](https://nod
 ### 2. Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_FOLDER_NAME>
+git clone https://github.com/prash-spartanx/angular-expandable-table
 ```
 
 ### 3. Install Dependencies
